@@ -1,0 +1,50 @@
+{{! CATEGORY MODEL }}
+
+<form action="/addCategory" method="post">
+  <h2>Add Category</h2>
+
+  <input
+    type="text"
+    placeholder="Enter Category to add"
+    name="category"
+    required
+  />
+  <button type="submit">Add Category</button>
+</form>
+
+<form action="/deleteCategory" method="post">
+
+  <h2>Delete Category</h2>
+  <label>Delete category :</label>
+
+  <select name="category" id="deletecategory" required>
+    <option value="">None</option>
+    {{#each categoryArray}}
+      <option value={{this}}>{{this}}</option>
+    {{/each}}
+  </select>
+
+  <button type="submit">Delete Category</button>
+
+</form>
+
+{{! ITEM MODEL }}
+
+<form action="/addItem" method="post">
+
+  <h2>ADD PRODUCTS</h2>
+  <input type="text" placeholder="Enter Name" name="name" required />
+  <input type="number" placeholder="Enter Price" name="price" required />
+  <input type="text" placeholder="Enter IMAGE URL" name="image" required />
+  <label>category :</label>
+
+  <select name="category" required>
+    <option value="">None</option>
+    {{#each categoryArray}}
+      <option value={{this}}>{{this}}</option>
+    {{/each}}
+  </select>
+
+  <button type="submit">Add Product</button>
+
+</form>
