@@ -1,0 +1,15 @@
+<h2>ALL PRODUCTS</h2>
+{{#each productsArr}}
+  <div>
+    <h3>ID : {{this._id}}</h3>
+    <h3>Name : {{this.name}}</h3>
+    <h3>Price : {{this.price}}</h3>
+    <h3>Added on : {{this.updated}}</h3>
+    <h3>Category : {{this.category}}</h3>
+    <img src="{{this.image}}" alt="Image of the Product {{this.name}}" />
+
+    <a href="/deleteproducts?{{this.id}}">
+      <button>Delete Item</button>
+    </a>
+  </div>
+{{/each}}
